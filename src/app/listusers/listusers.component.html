@@ -1,0 +1,50 @@
+          
+          <div class="row ">
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Users Details</h4>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          
+                          <th> FirstName </th>
+                          <th> LastName</th>
+                          <th> Email </th>
+                          <th> Gender </th>
+                          <th> Phone </th>
+                          <th>Pincode </th>
+                           <th align="center"> Action </th> 
+                        </tr>
+                      </thead>
+                      <tbody>
+
+
+                        
+                        <tr *ngFor="let u of users">
+
+                            
+                          
+                          <td>
+                            <span class="ps-2">{{u.firstName}}</span>
+                          </td>
+                          <td> {{u.lastName}} </td>
+                          <td> {{u.email}} </td>
+                          <td> {{u.gender}} </td>
+                          <td> {{u.phone}}</td>
+                          <td> {{u.pincode}} </td>
+                           <td>
+                            <div class="badge badge-outline-success"(click)="deleteUser(u.userId)">DELETE</div>
+                            
+                          </td> 
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          

@@ -1,0 +1,61 @@
+          
+          <div class="row ">
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Service Provider Details</h4>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          
+                          <th> FirstName </th>
+                          <th> LastName</th>
+                          <th> Email </th>
+                          <th> Gender </th>
+                          <th> Phone </th>
+                          <th>Pincode </th>
+                          <th>Service</th>
+                          <th>Active</th>
+                           <th align="center"> Action </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+
+                        
+                         <tr *ngFor="let s of sp">
+
+                            
+                          
+                          <td>
+                            
+                            <span class="ps-2">{{s.firstName}}</span>
+                          </td>
+                          <td> {{s.lastName}} </td>
+                          <td> {{s.email}} </td>
+                          <td> {{s.gender}} </td>
+                          <td> {{s.phone}}</td>
+                          <td> {{s.pincode}} </td> 
+                          <td> {{s.service}} </td> 
+                          <td> {{s.isactive}} </td> 
+                          
+                          <td>
+                            <div class="badge badge-outline-success"(click)="deleteProvider(s.providerId)">DELETE</div>|
+
+                            <div class="badge badge-outline-success" (click)="approve(s.providerId)">Approve</div>
+                            
+                          </td> 
+                         </tr> 
+
+                        
+                        
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          

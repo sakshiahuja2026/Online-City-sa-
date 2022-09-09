@@ -1,0 +1,123 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "OnlineCity": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/online-city",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "src/assets/plugins/bootstrap/css/bootstrap.min.css",
+              "src/assets/plugins/themify/css/themify-icons.css",
+              "src/assets/plugins/fontawesome/css/all.css",
+              "src/assets/plugins/magnific-popup/dist/magnific-popup.css",
+              "src/assets/plugins/slick-carousel/slick/slick.css",
+              "src/assets/plugins/slick-carousel/slick/slick-theme.css",
+              "src/assets/css/style.css"  
+            ],
+            "scripts": [
+              "src/assets/plugins/jquery/jquery.js",
+              "src/assets/js/contact.js",
+              "src/assets/plugins/bootstrap/js/popper.js",
+              "src/assets/plugins/bootstrap/js/bootstrap.min.js",
+              "src/assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js",
+              "src/assets/plugins/slick-carousel/slick/slick.min.js",
+              "src/assets/plugins/counterup/jquery.waypoints.min.js",
+              "src/assets/plugins/counterup/jquery.counterup.min.js",
+              "src/assets/plugins/google-map/map.js",
+              "src/assets/js/script.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "OnlineCity:build:production"
+            },
+            "development": {
+              "browserTarget": "OnlineCity:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "OnlineCity:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "01f2a80f-ba5f-45da-be20-03b9c22301c9"
+  }
+}

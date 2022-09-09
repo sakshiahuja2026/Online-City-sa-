@@ -1,0 +1,29 @@
+<p>service-list works!</p>
+
+
+
+
+    <div class="card" *ngFor="let account of availableService">
+        <!-- <img src="ref_images/<%= p.getPhoto() %>" alt="<%= p.getPhoto() %>" style=" align-content: center; width: 7.85cm; height: 8cm"> -->
+        <h2>{{account.firstName}}&nbsp; {{account.lastName}}</h2>
+        <p class="title">Service: {{account.service}}</p>
+        
+        Email Id:<a href="mailto:{{account.email}}" >{{account.email}}</a>
+        Phone:<a href="tel:{{account.phone}}">Call Us : <span>{{account.phone}}</span></a><br>
+        <button class="btn btn-outline-danger btn-round-full" type="submit" (click)="book()" > Book </button>
+        <!-- <form name="readwritereview" action="UserController" method="post">
+        <input type="hidden" value="<%=p.getId() %>" name="pid">
+        <input type="hidden" value="<%=user.getId() %>" name="uid">
+        <input type="hidden" value="<%=user.getFname() %>" name="uname">
+      <table>
+          <tr>
+              <td>
+                  <button type="submit" class="button" name="action" value="Write a review">&emsp;Write a review&nbsp;&nbsp;</button>
+              </td>
+              <td>
+                  <button type="submit" class="button" name="action" value="Read Review">&emsp;&nbsp;Read Review&nbsp;&nbsp;&nbsp;</button>
+              </td>
+          </tr>
+      </table>
+      </form> -->
+  </div>

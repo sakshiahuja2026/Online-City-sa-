@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+   
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <form [formGroup]="signupForm" (ngSubmit)="signup()" class="register-form" >
+                            
+
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" formControlName="firstName" id="firstName" placeholder="Your First Name"/>
+                                <span class="err"
+                                *ngIf="signupForm.get('firstName')?.touched  && signupForm.get('firstName')?.hasError('required')">Please
+                                Enter FirstName</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" formControlName="lastName" id="lastName" placeholder="Your Last Name"/>
+                                <span class="err"
+                                *ngIf="signupForm.get('lastName')?.touched  && signupForm.get('lastName')?.hasError('required')">Please
+                                Enter lastName</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="date" formControlName="Dob" id="Dob" placeholder="Your Dob"/>
+                                <span class="err"
+                                *ngIf="signupForm.get('Dob')?.touched  && signupForm.get('Dob')?.hasError('required')">Please
+                                Enter Dob</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="radio" formControlName="gender" id="gender" value="male" placeholder="Your gender"/>Male
+                                <input type="radio" formControlName="gender" id="gender" value="female" placeholder="Your gender"/>Female
+                                <span class="err"
+                                *ngIf="signupForm.get('gender')?.touched  && signupForm.get('gender')?.hasError('required')">Please
+                                Enter gender</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" formControlName="email" id="email" placeholder="Your Email"/>
+                                <span class="err"
+                                *ngIf="signupForm.get('email')?.touched  && signupForm.get('email')?.hasError('required')">Please
+                                Enter email</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="number" formControlName="phone" id="phone" placeholder="Your phone"/>
+                                <span class="err"
+                                *ngIf="signupForm.get('phone')?.touched  && signupForm.get('phone')?.hasError('required')">Please
+                                Enter phone</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" formControlName="password" id="password" placeholder="Password"/>
+                                <span class="err"
+                                *ngIf="signupForm.get('password')?.touched  && signupForm.get('password')?.hasError('required')">Please
+                                Enter password</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" formControlName="pincode" id="pincode" placeholder="Your pincode"/>
+                                <span class="err"
+                                *ngIf="signupForm.get('pincode')?.touched  && signupForm.get('pincode')?.hasError('required')">Please
+                                Enter pincode</span>
+                            </div>
+                            
+                           
+                            
+                           
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                       
+                        <a routerLink="/login" class="signup-image-link">I am already member</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    
+</body>
+</html>

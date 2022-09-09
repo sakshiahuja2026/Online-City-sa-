@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form th:action="@{/users/save}"
+            th:object="${user}" method="post"
+            enctype="multipart/form-data"
+            >
+        photo: <input type="file" [(ngModel)]="photo" class="form-control" /><br>
+       
+</form>
+        <button class="btn btn-primary" type="button" (click)="uploadphoto()">Signup</button>
+    </div>
+</div>
